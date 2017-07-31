@@ -1,0 +1,13 @@
+.pop-up.pop-up-main
+	.pop-up--inner
+		p.pop-up--title Заполните форму и мы свяжемся с Вами в ближайшее время
+		form.pop-up--form(action="send.php", method="POST")
+			.input-field
+				input(name="name", type="text", placeholder="Введи свое имя")
+				//
+					span.input-field--check
+			.input-field.input-field-validation
+				input(name="tel", type="text", placeholder="Введите свой номер телефона")
+				span.input-field--check
+			button(type="submit").btn.btn-sm.btn-red.btn-submit Заказать обратный звонок
+	.pop-up--close

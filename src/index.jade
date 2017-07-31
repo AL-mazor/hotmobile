@@ -1,0 +1,149 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+		meta(name="description", content="")
+		meta(name="yandex-verification", content="133bc8fcd136d7e3")
+		link(rel="icon", href="img/favicon.png" type="image/x-icon")
+		link(rel="stylesheet", href="style.css")
+		link(rel="stylesheet", href="animate.css")
+
+		title Hot Mobile
+	body
+		include template/mixins
+
+		//include google-analytics.js
+		header.header
+			.container
+				a(href="/").img-logo
+					span.logo-images
+				.header--nav
+					nav.primary-nav
+						ul
+							li.primary-nav--item
+								a(href="#advantages") Преимущества
+							li.primary-nav--item
+								a(href="#prices") Тарифы
+							li.primary-nav--item
+								a(href="#about-us") О нас
+							li.primary-nav--item
+								a(href="#feedbacks") Отзывы
+							li.primary-nav--item
+								a(href="#cta") Контакты
+					span.btn.btn-sm.btn-blue.btn-pop-up Обратный звонок
+					span.burger
+						i
+						i
+						i
+		main
+			#page-overlay.page-overlay
+				.container
+					.page-overlay--inner
+						.page-overlay--subtitle.wow.fadeInDown
+							|Лучшая современная
+							br 
+							|связь 4G+ уже в Израиле!
+							br 
+							|Подключись всего за 35 ₪!
+						.btn.btn-lg.btn-red.btn-pop-up.wow.fadeIn(data-wow-offset="100" data-wow-delay="0.3s") Получить бесплатную консультацию
+				.tv-tuner.wow.fadeInLeft
+					.parallax-viewport
+						span.bg-tv-tunner
+						span.iphone-tv-tunner
+				.gradient
+				include img/page-overlay-cut.svg
+			.offers#advantages.advantages
+				.container
+					.row
+						+offer1('Экономия', 'Экономьте до 1000 шекелей в год по сравнению с другими операторами', 'icon-coin')
+						+offer2('Выгодные тарифы', 'HOT mobile предоставляет простые, практичные и выгодные программы сотовой связи!', 'icon-rate')
+						+offer3('Теперь заграницей как дома', 'Специальные программы для выезжающих и звонящих за границу', 'icon-home')
+						+offer4('Современная связь' , 'Пользуйиесь самой современной связью в Израиле', 'icon-4g')
+			section#prices.prices
+				.container
+					h2.heading-block.heading-block-sm.heading-block-center.wow.fadeIn
+						span.heading-block--title.prices--subtitle Акции и тарифы
+						span.text-logo 
+							|«Hot Mobile»
+					.price-package-list.swiper-container
+						.swiper-wrapper-my
+							+price-simple('ТАРИФ', 'МИНИМАЛЬНЫЙ', '35', ['Звонки, SMS-сообщения без ограничений.', 'Сотовый интернет 6Гб', 'Интернет-провайдер для дома в подарок'])
+							+price-simple1('ТАРИФ', 'ОПТИМАЛЬНЫЙ', '45', ['Звонки, SMS-сообщения без ограничений.', 'Сотовый интернет 10Гб', 'Интернет-провайдер для дома в подарок'])
+							+price-simple('Тариф', 'Безлимитный', '49', ['Звонки, SMS-сообщения без ограничений.', 'Сотовый интернет без ограничений', 'Интернет-провайдер для дома в подарок'])
+			
+			// About Us
+			section#about-us.about-us
+				.container
+					.about-us--block.col-4-10
+						h2.about-us--title.wow.fadeIn
+							span.highlight Hot
+							span.highlight.custom-highlight  Mobile 
+							span.highlight – №1
+							br
+							| оператор телекоммуникаций в Израиле!
+						p.about-us--text.wow.fadeIn Новая современная сеть мобильной связи GSM 4 поколения, благодаря которой вы сможете наслаждаться широким спектром современных коммуникационных сервисов, быстрым сотовым интернетом и услугами сотовой связи, в Израиле и за рубежом.
+						ul.stats
+							li.stats--item.wow.fadeIn
+								span.stats--num 10 лет
+								span.stats--text Предоставляем услуги мобильной связи
+							li.stats--item.wow.fadeIn(data-wow-delay="0.1s")
+								span.stats--num 20 000
+								span.stats--text Постоянных пользователей
+							li.stats--item.wow.fadeIn(data-wow-delay="0.2s")
+								span.stats--num 50+
+								span.stats--text Центров обслуживание по всей стране
+					.about-us--tv
+						include img/Israel.svg
+					.about-us--phone.wow.fadeIn
+						img(src="img/gsm-logo.png", alt="")
+
+			// Feedbacks
+			section.feedbacks
+				.svg--feedback
+					include img/page-overlay-cut-2.svg
+				.container#feedbacks
+					.heading-block.heading-block-lg.heading-block-center
+						h2.heading-block--title.wow.fadeIn
+							|Отзывы клиентов
+							br
+							span.highlight «Hot Mobile»
+				.swiper-container.feedback-slider
+					.swiper-wrapper
+						+feedback1('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ipsum ex, fermentum eget lacus quis, dignissim molestie quam. Consectetur adipiscing elit. Duis ipsum ex, ', 'feedback-img-1.jpg', 'Евгений Кац', 'Executive Producer', 'BuzzFeed Motion Pictures')
+						+feedback2('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ipsum ex, fermentum eget lacus quis, dignissim molestie quam. Consectetur adipiscing elit. Duis ipsum ex, fermentum eget lacus quis, dignissim molestie quam.', 'feedback-img-4.jpg', 'Марк Томпсон', 'Executive Producer', 'BuzzFeed Motion Pictures')
+						+feedback3('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ipsum ex, fermentum eget lacus quis, dignissim molestie quam. Consectetur adipiscing elit. Duis ipsum ex, fermentum eget lacus quis,', 'feedback-img.jpg', 'Антон Шаган', 'Executive Producer', 'BuzzFeed Motion Pictures')
+						+feedback('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ipsum ex, fermentum eget lacus quis, dignissim molestie quam. Consectetur adipiscing elit. Duis ipsum ex, fermentum eget lacus quis, dignissim molestie quam.', 'feedback-img-4.jpg', 'Марк Томпсон', 'Executive Producer', 'BuzzFeed Motion Pictures')
+					.slider-btn.slider-btn-prev
+						include img/slider-btn-prev.svg
+					.slider-btn.slider-btn-next
+						include img/slider-btn-next.svg
+			section#cta.cta
+				.container
+					.heading-block.heading-block-sm.heading-block-center
+						span.heading-block--title.cta--title.wow.fadeIn Остались вопросы? Оставьте заявку и мы свяжемся с Вами прямо сейчас!
+						form.cta-form(method="post", action="send.php")
+							.input-field.wow.fadeIn
+								input(name="name", type="text", placeholder="Введи свое имя")
+								//
+									span.input-field--check
+							.input-field.input-field-validation.wow.fadeIn
+								input(name="email" type="email", placeholder="Введи свой номер телефона")
+								span.input-field--check
+							input(type="submit", value="Заказать обратный звонок").btn.btn-submit.btn-red.btn-sm
+			.pop-up-overlay
+			include template/pop-up
+
+			.scroll-top
+				.scroll-top--btn
+		footer.footer
+			span.foo-created Created by Hot Mobile
+		include callback.js
+		//include yandex-metrika.js
+		//include adwords-events-tracking.js
+		script(type="text/javascript", src="js/jquery.min.js")
+		script(type="text/javascript", src="js/swiper.jquery.min.js")
+		script(type="text/javascript", src="js/jquery.validate.min.js")
+		script(type="text/javascript", src="js/main.js")
+		script(type="text/javascript", src="js/wow.min.js")
+		script(type="text/javascript", src="js/jquery.parallax.js")
